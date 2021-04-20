@@ -67,7 +67,7 @@ $removable->addTool('calendar', 'calendar')
         $presenter->redirect('Calendar:default');
     };
 ```
-![Box screenshot](.docs/box.png)
+![Box screenshot](box.png)
 
 ### SmallBox
 By `Netlte\Boxes\SmallBox` you can show to users some kind of info data like number of orders.
@@ -93,7 +93,7 @@ $orders = new \Netlte\Boxes\SmallBox(
 			'this' // Link
 		);
 ```
-![SmallBox screenshot](.docs/smallbox.png)
+![SmallBox screenshot](smallbox.png)
 
 ### InfoBox
 By `Netlte\Boxes\InfoBox` you can show to users some kind of numeric data like number of likes and their progress.
@@ -120,7 +120,7 @@ $likes = new \Netlte\Boxes\InfoBox(
 			'70% Increase i 30 Days' // Description
 		);
 ```
-![InfoBox screenshot](.docs/infobox.png)
+![InfoBox screenshot](infobox.png)
 
 ### TabsBox
 `Netlte\Boxes\TabsBox` is similar to `Netlte\Boxes\Box`. You can define content by adding controls but sorted in tabs!
@@ -146,7 +146,7 @@ $sales = new Netlte\Boxes\TabsBox();
 $sales->addTab('donut', 'Donut')->addComponent($donut_content, 'content');
 $sales->addTab('area', 'Area')->addComponent($area_content, 'content');
 ```
-![TabsBox screenshot](.docs/tabsbox.png)
+![TabsBox screenshot](tabsbox.png)
 
 ## Development
 
