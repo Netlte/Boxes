@@ -1,11 +1,11 @@
 # Netlte > Boxes
 
-[![Build Status](https://badgen.net/travis/netlte/boxes)](https://travis-ci.com/Netlte/Boxes)
-[![Licence](https://badgen.net/packagist/license/netlte/boxes)](https://packagist.org/packages/Netlte/Boxes)
-[![Latest stable](https://badgen.net/packagist/v/netlte/boxes)](https://packagist.org/packages/Netlte/Boxes)
-[![Downloads this Month](https://badgen.net/packagist/dm/netlte/boxes)](https://packagist.org/packages/Netlte/Boxes)
-[![Downloads total](https://badgen.net/packagist/dt/netlte/boxes)](https://packagist.org/packages/Netlte/Boxes)
-[![PHPStan](https://badgen.net/badge/PHPStan/enabled/green)](https://github.com/phpstan/phpstan)
+[![Build Status](https://badgen.net/travis/netlte/boxes/)](https://travis-ci.com/Netlte/Boxes)
+[![Licence](https://badgen.net/packagist/license/netlte/boxes/)](https://packagist.org/packages/Netlte/Boxes)
+[![Latest stable](https://badgen.net/packagist/v/netlte/boxes/)](https://packagist.org/packages/Netlte/Boxes)
+[![Downloads this Month](https://badgen.net/packagist/dm/netlte/boxes/)](https://packagist.org/packages/Netlte/Boxes)
+[![Downloads total](https://badgen.net/packagist/dt/netlte/boxes/)](https://packagist.org/packages/Netlte/Boxes)
+[![PHPStan](https://badgen.net/badge/PHPStan/enabled/green/)](https://github.com/phpstan/phpstan)
 
 ## Credits
 
