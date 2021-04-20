@@ -1,0 +1,18 @@
+{varType \Netlte\Boxes\InfoBox $control}
+<!-- Info box - With progress -->
+<div n:class="'info-box', $control->getBackground() !== null && $control->getProgress() !== null ? 'bg-' . $control->getBackground()">
+	<span n:if="$control->getIcon() !== null" n:class="'info-box-icon', $control->getBackground() !== null && $control->getProgress() === null ? 'bg-' . $control->getBackground()">
+		<i class="{$control::$ICON_PREFIX}{$control->getIcon()}"></i>
+	</span>
+
+	<div class="info-box-content">
+		<span class="info-box-text">{$control->getText()|translate}</span>
+		<span class="info-box-number">{$control->getValue()|number:2:',':' '}</span>
+
+		<div n:if="$control->getProgress() !== null" class="progress">
+			<div class="progress-bar" style="width: {$control->getProgress()}%"></div>
+		</div>
+		<span n:if="$control->getDescription() !== null" class="progress-description">{$control->getDescription()|translate}</span>
+	</div>
+	<!-- /.info-box-content -->
+</div>

@@ -1,0 +1,30 @@
+{varType \Netlte\Boxes\Box $control}
+<div n:class="'box', 'box-' . $control->getBackground(), $control->isSolid() ? 'box-solid', $control->isCollapsed() ? 'collapsed-box'">
+	<div n:if="$control->getTitle() !== null || $control->hasTools()" n:class="'box-header', $control->hasBorder() ? 'with-border'">
+		<h3 n:if="$control->getTitle() !== null" class="box-title">{$control->getTitle()}</h3>
+
+		<div class="box-tools pull-right" n:if="$control->hasTools()">
+			{foreach $control->getTools() as $name => $tool}
+				<a n:href="tool! tool => $name" n:class="$tool->isAjaxEnabled() ? 'ajax', 'btn', 'btn-box-tool'">
+					<i n:class="$tool->getFQNIcon(), $tool->getColor() !== null ? 'text-' . $tool->getColor()"></i>
+				</a>
+			{/foreach}
+			<button n:if="$control->isCollapsable()" type="button" class="btn btn-box-tool" data-widget="collapse">
+				<i n:class="'fa', $control->isCollapsed() ? 'fa-plus' : 'fa-minus'"></i>
+			</button>
+			<button n:if="$control->isRemovable()" type="button" class="btn btn-box-tool" data-widget="remove">
+				<i class="fa fa-times"></i>
+			</button>
+		</div>
+		<!-- /.box-tools -->
+	</div>
+	<!-- /.box-header -->
+	<div n:class="'box-body', !$control->hasPadding() ? 'no-padding'" n:inner-foreach="$control->getComponents() as $component">
+		{control $component}
+	</div>
+	<!-- /.box-body -->
+
+	<div n:if="$control->hasOverlay()" class="overlay">
+		<i class="fa fa-refresh fa-spin"></i>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+{varType Netlte\Boxes\SmallBox $control}
+{varType string $icon_prefix}
+<div n:class="'small-box', $control->isSmaller() ? 'small-box-sm', $control->getBackground() !== null ? 'bg-' . $control->getBackground()">
+	<div class="inner">
+		<h3>{$control->getHeader()|translate}</h3>
+		<p>{$control->getText()|translate}</p>
+	</div>
+	<div n:if="$control->getIcon() !== null" class="icon">
+		<i class="{$control::$ICON_PREFIX}{$control->getIcon()}"></i>
+	</div>
+	<a n:if="$control->getLink() !== null" n:href="{$control->getLink()}" class="small-box-footer">
+		{_'netlte.small_box.more_info'}
+		<i class="fa fa-arrow-circle-right"></i></a>
+</div>

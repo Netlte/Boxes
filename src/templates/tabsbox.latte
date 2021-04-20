@@ -1,0 +1,26 @@
+{varType \Netlte\Boxes\TabsBox $control}
+{varType \Netlte\Boxes\ITab $tab}
+{var bool $first = true}
+
+{snippet flashes}
+	<div n:foreach="$flashes as $flash" class="alert alert-{$flash->type} alert-dismissible">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		{$flash->message}
+	</div>
+{/snippet}
+<div class="nav-tabs-custom">
+	<ul class="nav nav-tabs" n:inner-foreach="$control->getComponents(false, \Netlte\Boxes\ITab::class) as $tab">
+		<li n:class="($first && $control->active === null) || $control->active === $tab->getName() ? 'active'">
+			<a href="#{$tab->getName()}" data-toggle="tab">{$tab->getLabel()|translate}</a>
+		</li>
+        {php $first = false}
+	</ul>
+    {php $first = true}
+	<div class="tab-content" n:inner-foreach="$control->getComponents(false, \Netlte\Boxes\ITab::class) as $tab">
+		<div n:class="'tab-pane', ($first && $control->active === null) || $control->active === $tab->getName() ? 'active'" id="{$tab->getName()}">
+			{control $tab}
+		</div>
+        {php $first = false}
+	</div>
+	<!-- /.tab-content -->
+</div>
