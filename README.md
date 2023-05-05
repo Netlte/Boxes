@@ -1,6 +1,5 @@
 # Netlte > Boxes
 
-[![Build Status](https://badgen.net/travis/netlte/boxes/)](https://travis-ci.com/Netlte/Boxes)
 [![Licence](https://badgen.net/packagist/license/netlte/boxes/)](https://packagist.org/packages/Netlte/Boxes)
 [![Latest stable](https://badgen.net/packagist/v/netlte/boxes/)](https://packagist.org/packages/Netlte/Boxes)
 [![Downloads this Month](https://badgen.net/packagist/dm/netlte/boxes/)](https://packagist.org/packages/Netlte/Boxes)
@@ -29,8 +28,8 @@ You can find more info in [.docs](.docs/) folder.
 
 | State       | AdminLTE | Version | Branch   | PHP      |
 |-------------|----------|---------|----------|----------|
-| stable      |   `2.0`  | `^1.0`  |  `main`  | `>= 7.4` |
-| NoN         |   `3.0`  | `^2.0`  |  `main`  | `>= 8.0` |
+| stable      | `2.0`    | `^1.0`  |  `main`  | `>= 7.4` |
+| stable      | `3.0`    | `^2.0`  |  `main`  | `>= 7.4` |
 
 
 ## Tests
