@@ -24,14 +24,17 @@ class Box extends AbstractControl {
 	/** @var Tool[] */
 	private array $tools = [];
 	private ?string $title = null;
+    private ?string $url = null;
 	private string $background = self::DEFAULT_BACKGROUND;
 	private bool $solid = true;
 	private bool $collapsed = false;
+    private bool $maximizable = false;
 	private bool $collapsable = false;
 	private bool $removable = false;
 	private bool $overlay = false;
 	private bool $padding = true;
-	private bool $border = true;
+
+    private bool $autoload = true;
 
 	public function __construct(?string $title = null) {
 		$this->title = $title;
@@ -62,20 +65,34 @@ class Box extends AbstractControl {
 		return $this->collapsed;
 	}
 
+    public function isMaximizable(): bool {
+        return $this->maximizable;
+    }
+
 	public function isCollapsable(): bool {
 		return $this->collapsable;
 	}
+
+    public function isRefreshable(): bool {
+        return $this->url !== null;
+    }
+
+    public function isAutoloadEnabled(): bool {
+        return $this->autoload;
+    }
+
+
 
 	public function hasPadding(): bool {
 		return $this->padding;
 	}
 
-	public function hasBorder(): bool {
-		return $this->border;
-	}
-
 	public function hasTools(): bool {
-		return  \count($this->tools) > 0 || $this->isCollapsable() || $this->isRemovable();
+		return  \count($this->tools) > 0
+            || $this->isCollapsable()
+            || $this->isRemovable()
+            || $this->isMaximizable()
+            || $this->isRefreshable();
 	}
 
 	/**
@@ -107,6 +124,10 @@ class Box extends AbstractControl {
 		return $this->title;
 	}
 
+    public function getRefreshUrl(): ?string {
+        return $this->url;
+    }
+
 	public function isSolid(): bool {
 		return $this->solid;
 	}
@@ -134,14 +155,13 @@ class Box extends AbstractControl {
 		$this->collapsable = $collapsable;
 		return $this;
 	}
+    public function setMaximizable(bool $maximizable = true): self {
+        $this->maximizable = $maximizable;
+        return $this;
+    }
 
 	public function setPadding(bool $padding = true): self {
 		$this->padding = $padding;
-		return $this;
-	}
-
-	public function setBorder(bool $border = true): self {
-		$this->border = $border;
 		return $this;
 	}
 
@@ -149,6 +169,11 @@ class Box extends AbstractControl {
 		$this->title = $title;
 		return $this;
 	}
+
+    public function setRefreshUrl(?string $url = null): self {
+        $this->url = $url;
+        return $this;
+    }
 
 	public function setSolid(bool $solid = true): self {
 		$this->solid = $solid;

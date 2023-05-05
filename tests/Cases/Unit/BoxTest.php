@@ -67,6 +67,20 @@ class BoxTest extends TestCase {
 		$box->setRemovable(false);
 		Assert::false($box->hasTools());
 
+        // Maximizable
+        $box->setMaximizable(true);
+        Assert::true($box->hasTools());
+        Assert::true($box->isMaximizable());
+        $box->setMaximizable(false);
+        Assert::false($box->hasTools());
+
+        // Refreshable
+        $box->setRefreshUrl('some-url');
+        Assert::true($box->hasTools());
+        Assert::true($box->isRefreshable());
+        $box->setRefreshUrl(null);
+        Assert::false($box->hasTools());
+
 	}
 
 }
